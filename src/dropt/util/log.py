@@ -32,6 +32,8 @@ class MetaLogger:
         ch.setLevel(level)
         ch.setFormatter(self.chformatter)
         self._logger.addHandler(ch)
+        if (self._logger.level == 0) or (self._logger.level > level):
+            self._logger.setLevel(level)
 
     def add_file_handler(self, level, **kwargs):
         '''Create a file handler.
@@ -45,6 +47,8 @@ class MetaLogger:
         fh.setLevel(level)
         fh.setFormatter(self.fhformatter)
         self._logger.addHandler(fh)
+        if (self._logger.level == 0) or (self._logger.level > level):
+            self._logger.setLevel(level)
 
 
 class BaseLogger(MetaLogger):
