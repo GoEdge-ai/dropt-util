@@ -75,7 +75,7 @@ class SrvLogger(BaseLogger):
 
 class CliLogger(BaseLogger):
     '''DrOpt client logger.'''
-    name = 'dropt.client'
+    name = 'dropt.cli'
 
     def __init__(self):
         super().__init__(self.name)
